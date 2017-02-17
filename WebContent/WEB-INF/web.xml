@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE web-app PUBLIC 
+	"-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" 
+	"http://java.sun.com/dtd/web-app_2_3.dtd"
+	>
+
+<web-app id="WebApp_ID" 
+		 version="3.1" 
+		 xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+		                     http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" >
+
+	<!-- Una aplicación web con el framework STRUTS sólo tiene un único servlet, 
+	 éste que aquí se describe. 
+	 Todas las demás acciones se deben realizar a través de los Actions y
+	 los ActionForwards. -->
+
+	<!-- Único servlet que se define -->
+
+	<servlet>
+		<servlet-name>action</servlet-name>
+		<servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>/WEB-INF/struts-config.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>action</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Mapeado de filtro -->
+	
+	<filter>
+		<filter-name>FiltroMedicionTiempo</filter-name>
+		<filter-class>filter.FiltroMedicionTiempo</filter-class>
+	</filter>
+  
+	<filter-mapping>
+		<filter-name>FiltroMedicionTiempo</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+    <!-- Tiempo máximo de la sesión -->
+
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+	
+	<!--  Tipos de archivos iniciales de la aplicación -->
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<!-- Parametros iniciales de la aplicación -->
+	<context-param>
+		<param-name>Recomendacion</param-name>
+		<param-value>El Señor de los Pestiños</param-value>
+	</context-param>
+	
+	<!-- Datos del Listener -->
+	<listener>
+		<description>Se indica la clase que implementa ServerContextListener</description>
+		<listener-class>etiquetas.RecomendacionDia</listener-class>
+	</listener>
+
+</web-app>
+

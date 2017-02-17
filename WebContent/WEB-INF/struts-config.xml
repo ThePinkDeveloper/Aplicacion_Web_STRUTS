@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+	"http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd" >
+	
+<struts-config>
+	
+	<!-- DEFINICIÓN DE LOS FORM-BEANS -->
+	
+	<form-beans>
+		<form-bean name="altaLibroForm" 
+				   type="actionforms.AltaLibroForm" 
+		/>
+		
+		<form-bean name="eliminarLibroForm" 
+				   type="actionforms.EliminarLibroForm" 
+		/>
+		
+		<form-bean name="consultarIsbnForm" 
+				   type="actionforms.ConsultarIsbnForm" 
+		/>
+		
+		<form-bean name="consultarTituloForm" 
+				   type="actionforms.ConsultarTituloForm" 
+		/>
+		
+		<form-bean name="modificarPrecioForm" 
+				   type="actionforms.ModificarPrecioForm" 
+		/>
+	</form-beans>
+	
+	<!-- MAPEO DE ACCIONES  -->
+	
+	<action-mappings>
+		<action path="/altaLibro" type="actions.AltaLibroAction"
+				name="altaLibroForm" input="/AltaLibro.jsp"	>
+				
+			<forward name="ok" path="/altalibro/SuccessAltaLibro.jsp"	/>
+			<forward name="error" path="/altalibro/ErrorAltaLibro.jsp" />
+			
+		</action>
+		
+		<action path="/eliminarLibro" type="actions.EliminarLibroAction"
+				name="eliminarLibroForm" input="/EliminarLibro.jsp"	>
+			<forward name="ok" 
+					 path="/eliminarlibro/SuccessEliminarLibro.jsp"
+			/>
+			<forward name="error" 
+					 path="/eliminarlibro/ErrorEliminarLibro.jsp"
+			/>	
+		</action>
+		
+		<action path="/gestionCompra" type="actions.GestionCompraAction" >
+			<forward name="finalizar" 
+					 path="/mostrartodo/comprar/FinalizarCompra.jsp"
+			/>
+			<forward name="anadir" 
+					 path="/mostrartodo/MostrarTodo.jsp"
+			/>	
+		</action>
+		
+		<action path="/finalizarCompra" type="actions.FinalizarCompraAction" >
+			<forward name="modificarCantidad" 
+					 path="/mostrartodo/comprar/FinalizarCompra.jsp"
+			/>	
+		</action>
+		
+		<action path="/consultarIsbn" type="actions.ConsultarIsbnAction"
+				name="consultarIsbnForm" input="/ConsultarIsbn.jsp"	>
+			<forward name="ok" 
+					 path="/consultarisbn/SuccessConsultarIsbn.jsp"
+			/>
+			<forward name="error" 
+					 path="/consultarisbn/ErrorConsultarIsbn.jsp"
+			/>	
+		</action>
+
+		<action path="/consultarTitulo" type="actions.ConsultarTituloAction"
+				name="consultarTituloForm" input="/ConsultarTitulo.jsp"	>
+			<forward name="ok" 
+					 path="/consultartitulo/SuccessConsultarTitulo.jsp"
+			/>
+			<forward name="error" 
+					 path="/consultartitulo/ErrorConsultarTitulo.jsp"
+			/>	
+		</action>
+		
+		<action path="/modificarPrecio" type="actions.ModificarPrecioAction"
+				name="modificarPrecioForm" input="/ModificarPrecio.jsp"	>
+			<forward name="ok" 
+					 path="/modificarprecio/SuccessModificarPrecio.jsp"
+			/>
+			<forward name="error" 
+					 path="/modificarprecio/ErrorModificarPrecio.jsp"
+			/>	
+		</action>
+		
+		<action path="/buscarAutor" type="actions.BuscarAutorAction">
+			<forward name="datos" 
+					 path="/buscarAutor.jsp"
+			/>
+		</action>
+		
+		<action path="/buscarEditorial" type="actions.BuscarEditorialAction">
+			<forward name="datos" 
+					 path="/buscarEditorial.jsp"
+			/>
+		</action>		
+	</action-mappings>
+	
+
+</struts-config>
+
+	

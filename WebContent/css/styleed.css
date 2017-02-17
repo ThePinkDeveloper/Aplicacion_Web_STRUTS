@@ -1,0 +1,113 @@
+body {
+	background:			#f77575;
+}
+
+header {
+	border-bottom:		3px solid #e13d46;
+	margin-left:		3%;
+	margin-right:		3%;
+}
+
+div {
+	display: 			inline-block;
+}
+
+div#main {
+	margin-top:			30px;
+	width:				100%;
+}
+
+div#divcombo {
+	width:				33%;
+}
+
+div#divcombo select {
+	margin-left:		10%;
+	margin-right:		10%;
+	width:				80%;
+	background:			#e55862;
+	border:				1px black solid;
+}
+
+div#datos {
+	width:				66%;
+}
+
+div#datosEditorial {
+	width:				50%;
+	vertical-align:		top;
+}
+
+div#datosLibros {
+	width:				50%;
+	vertical-align:		top;
+}
+
+table#tablaEditorial {
+	width:				80%;
+	margin-left:		10%;
+	margin-right:		10%;
+	border-collapse: 	collapse;
+}
+
+table#tablaEditorial tr:nth-child(odd){
+	background:			#f9dacb;
+}
+
+td + td {
+	
+}
+
+table#tablaLibros {
+	width:				80%;
+	margin-left:		10%;
+	margin-right:		10%;
+	border-collapse: 	collapse;
+}
+
+table#tablaLibros tr:nth-child(odd){
+	background:			#f9dacb;
+}
+
+table#tablaLibros td {
+	text-align:			center;
+}
+
+caption {
+    height: 			40px;
+    border:				1px black solid;
+    background:			#e55862;
+    font-weight:		bold;
+}
+
+td {
+	padding:			3px;
+}
+
+div#separacion {
+	display:			block;
+	margin-top:			30px;
+	border-bottom:		3px solid #e13d46;
+	margin-left:		3%;
+	margin-right:		3%;
+}
+
+a#index {	
+	display:			inline-block;
+	margin-top:			30px;
+	margin-left:		3%;
+	background:			#e55862;
+	color:				black;
+	border:				solid 1px black;
+	padding:			10px;
+	text-decoration: 	none;
+	font-weight: 		bold; 
+	font-size: 			1.3em;
+}
+
+footer {
+	margin-left:		3%;
+	margin-top:			30px;
+	font-size:			0.9em;
+	font-style:			italic;
+}
